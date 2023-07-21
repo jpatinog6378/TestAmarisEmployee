@@ -1,0 +1,2 @@
+C:\Users\sebastianpg\source\repos\Amaris\Amaris.Client\angularapp\obj\Debug\Amaris.Client.esproj.SuggestedBindingRedirects.cache
+C:\Users\sebastianpg\source\repos\Amaris\Amaris.Client\angularapp\obj\Debug\Amaris.Client.esproj.CoreCompileInputs.cache

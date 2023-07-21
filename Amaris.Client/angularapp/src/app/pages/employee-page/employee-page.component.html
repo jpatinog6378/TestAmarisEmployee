@@ -1,0 +1,41 @@
+<app-header></app-header>
+<h2 class="display-4 custom-title">Amaris Request Employee</h2>
+<div class="container">
+    <form>
+        <div class="mb-3">
+            <label for="idEmployee" class="form-label">ID Employee</label>
+            <input type="text" class="form-control" id="idEmployee" name="idEmployee" [(ngModel)]="idEmployee">
+            <div id="idEmployeeHelp" class="form-text">Enter the ID number of the employee you want to search for (Optional)</div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="searchEmployee()">Submit</button>
+    </form>
+    <br />
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Employee Salary</th>
+                <th scope="col">Employee Age</th>
+                <th scope="col">Employee Anual Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let item of getItems()">
+                <td>{{ item.id }}</td>
+                <td>{{ item.employee_name }}</td>
+                <td>{{ item.employee_salary }}</td>
+                <td>{{ item.employee_age}}</td>
+                <td>{{ item.employee_anual_salary }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination *ngIf="dataSource.length"
+                [(ngModel)]="currentPage"
+                [totalItems]="dataSource.length"
+                [itemsPerPage]="itemsPerPage"
+                (pageChanged)="pageChanged($event)"
+                class="d-flex justify-content-center">
+    </pagination>
+</div>
+<app-footer></app-footer>
